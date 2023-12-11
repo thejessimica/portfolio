@@ -12,8 +12,72 @@
   </header>
 
   <main class="px-3">
-    <h1>contact me</h1>
-    <p class="lead">This page is a work in progress!</p>
+    {% if form_submitted %}
+    <h1>Thank you for reaching out!</h1>
+    {% else: %}
+    <h1>Contact Me</h1>
+    <p class="lead">
+    <form
+            id="contactForm"
+            name="sentMessage"
+            action="{{ url_for('contact') }}"
+            method="post"
+          >
+            <div class="form-floating">
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your name..."
+                required
+              /><br>
+              <label for="name">Name</label>
+            </div>
+            <div class="form-floating">
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email..."
+                required
+              /><br>
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-floating">
+              <input
+                class="form-control"
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter your phone number..."
+                required
+              /><br>
+              <label for="phone">Phone Number</label>
+            </div>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                placeholder="Enter your message here..."
+                required
+                style="height: 12rem"
+              ></textarea>
+              <label for="message">Message</label>
+            </div>
+            <br />
+            <button
+              class="btn btn-light fw-bold border-white bg-white"
+              id="submitButton"
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
+    </p>
+    {% endif %}
   </main>
 
 
