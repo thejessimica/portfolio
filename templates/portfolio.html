@@ -12,8 +12,21 @@
   </header>
 
   <main class="px-3">
-    <h1>portfolio</h1>
-    <p class="lead">This page is a work in progress!</p>
+    <p>Click "See More" for details on any project!</p>
+<div class="row g-4">
+    {% for item in portfolio: %}
+  <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">Portfolio Item</h5>
+              <p class="card-text">Portfolio Item description</p>
+              <a href="#" class="btn btn-light fw-bold border-white bg-white">See More</a>
+          </div>
+      </div>
+  </div>
+    {% endfor %}
+</div>
   </main>
 
 {% include "footer.html" %}

@@ -23,7 +23,8 @@ def home():
 
 @app.route('/portfolio')
 def portfolio():
-    return render_template("portfolio.html")
+    portfolio = [1, 2, 3, 4, 5, 6, 7, 8]
+    return render_template("portfolio.html", portfolio=portfolio)
 
 
 @app.route('/contact', methods=["GET", "POST"])
