@@ -1,19 +1,45 @@
-from flask import Flask, render_template, redirect, url_for, request, flash, abort
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, URL
 import os
 import smtplib
 from email.message import EmailMessage
+from flask_sqlalchemy import SQLAlchemy
 
 
+# Init Flask App
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['FLASK_KEY']
+
+# Init Boostrap
 Bootstrap5(app)
 
+# Init SQLAlchemy
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///portfolio.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///portfolio.db")
+db = SQLAlchemy()
+db.init_app(app)
+
+# Declare variables
 MY_EMAIL = os.environ["MY_EMAIL"]
 MY_EMAIL_PASSWORD = os.environ["MY_EMAIL_PASSWORD"]
 TARGET_EMAIL = os.environ["TARGET_EMAIL"]
+
+
+# Database layout for projects
+class Projects(db.Model):
+    __tablename__ = "portfolio_projects"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), unique=True, nullable=False)
+    summary = db.Column(db.String(250), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    github_link = db.Column(db.String(250), nullable=True)
+    thumbnail = db.Column(db.String(250), nullable=True)
+    image = db.Column(db.String(250), nullable=True)
+
+
+# Create database
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/')
