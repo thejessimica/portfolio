@@ -49,8 +49,17 @@ def home():
 
 @app.route('/portfolio')
 def portfolio():
-    portfolio = [1, 2, 3, 4, 5, 6, 7, 8]
-    return render_template("portfolio.html", portfolio=portfolio)
+    return render_template("portfolio.html")
+
+
+@app.route('/dragonbot')
+def dragonbot():
+    return render_template("dragonbot.html")
+
+
+@app.route('/snowagerbot')
+def snowagerbot():
+    return render_template("snowagerbot.html")
 
 
 @app.route('/contact', methods=["GET", "POST"])

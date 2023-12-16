@@ -14,18 +14,31 @@
   <main class="px-3">
     <p>Click "See More" for details on any project!</p>
 <div class="row g-4">
-    {% for item in portfolio: %}
+
+<!--    break-->
   <div class="col-sm-6">
-      <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="../static/assets/img/Dragonbot_thumb.png" alt="A Discord Bot Icon" width=auto height=150px>
           <div class="card-body">
-              <h5 class="card-title">Portfolio Item</h5>
-              <p class="card-text">Portfolio Item description</p>
-              <a href="#" class="btn btn-light fw-bold border-white bg-white">See More</a>
+              <h5 class="card-title">Dragon Bot</h5>
+              <p class="card-text">Dragon Bot is a Discord bot that can perform tasks such as API calls and providing information.</p>
+              <a href="{{ url_for('dragonbot') }}" class="btn btn-light fw-bold border-white bg-white">See More</a>
           </div>
       </div>
   </div>
-    {% endfor %}
+<!--    break-->
+<!--    break-->
+  <div class="col-sm-6">
+      <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="../static/assets/img/Snowager_thumb.png" alt="A drawing of the Snowager" height=150px>
+          <div class="card-body">
+              <h5 class="card-title">Snowager Bot</h5>
+              <p class="card-text">Snowager Bot is a Telegram bot which makes announcements three times per day.</p>
+              <a href="{{ url_for('snowagerbot') }}" class="btn btn-light fw-bold border-white bg-white">See More</a>
+          </div>
+      </div>
+  </div>
+<!--    break-->
 </div>
   </main>
 
