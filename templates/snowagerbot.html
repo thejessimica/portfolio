@@ -10,12 +10,31 @@
       </nav>
     </div>
   </header>
-  <main class="px-3">
+  <main class="px-3 mb-auto mt-5">
 <div class="container">
   <div class="typewriter">
-    <h1>Under Construction</h1>
+    <h1>Snowager Bot</h1>
+<br><br>
+<p><i>
+Snowager Bot is a Telegram bot which makes announcements three times per day.
+</i>
+<br><br>
+<img src="../static/assets/img/Snowager_Message.png">
+<br><br>
+Snowager Bot was made after the need arose for a bot that would send a reminder at specific intervals each day. The bot then provides a link to the related site (where the event in question is only active at the given times). Users can receive the reminder and follow the link to complete their tasks.
+<br><br>
+While more lightweight than its predecessor, Dragon Bot, Snowager Bot is very effective in its distribution of reminders. It uses the datetime module to check the current time. If the time is one of the windows specified, the reminder is sent.
+<br><br>
+In addition to the reminder, Snowager Bot features an ever-growing list of quips and quotes (primarily from movies and games). These are selected at random each time the bot sends a reminder. Users not only receive the reminder, but can enjoy a quote that changes each time.
+<br><br>
+This bot operates entirely using the Telegram API, but has the potential to be ported to other platforms, should the need arise.
+<br><br>
+This bot is a personal project for learning purposes. Feedback and suggestions are welcome. You can view the entire code here:
+<br>
+<a href="https://github.com/hatosaurus/snowagerbot" target="_blank">Snowager Bot on Github</a>
+</p>
+
   </div>
 </div>
   </main>
-
 {% include "footer.html" %}

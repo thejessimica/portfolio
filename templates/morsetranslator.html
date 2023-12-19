@@ -1,0 +1,40 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="px-3 mb-auto mt-5">
+<div class="container">
+  <div class="typewriter">
+    <h1>Morse Code Translator</h1>
+<br><br>
+<p><i>
+The Morse code translator can translate both to and from Morse code, and is compatible with most online Morse translators.
+</i>
+<br><br>
+<img src="../static/assets/img/morse_code.png">
+<br><br>
+The Morse Code translator was written independently, primarily to showcase in this portfolio. Originally, the scope of the project was to translate from plaintext to Morse Code. As an additional challenge, I decided to build functionality that allows translating from Morse to plaintext as well. The end result is a translator that can go both ways - both to and from Morse.
+<br><br>
+Translating to Morse is as simple as finding the given letter (key) in the alphabet dictionary. The value is then returned as equivalent to the key, and when the entire string is processed, it is returned as Morse code.
+<br><br>
+Translating from Morse is a lot more complex, which was a satisfying challenge. The program will collect symbols (dots and dashes) until it reaches a break. This break can be indicated by a slash or spaces, the most common syntax for indicating breaks in written Morse.
+<br><br>
+When the program has detected a break, it will group all previously collected symbols together and find their matching key in the dictionary (which for this purpose, is reversed). Upon locating this key, it amends the value to the final translation. When this entire process is complete, the result is a fully translated string.
+<br><br>
+The Morse Code translator was built as a project for this portfolio. You can view the code in its entirety here:
+<br>
+<a href="https://github.com/hatosaurus/morsetranslator" target="_blank">Morse Code Translator on Github</a>
+</p>
+
+  </div>
+</div>
+  </main>
+{% include "footer.html" %}

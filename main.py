@@ -26,20 +26,21 @@ TARGET_EMAIL = os.environ["TARGET_EMAIL"]
 
 
 # Database layout for projects
-class Projects(db.Model):
-    __tablename__ = "portfolio_projects"
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(250), unique=True, nullable=False)
-    summary = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    github_link = db.Column(db.String(250), nullable=True)
-    thumbnail = db.Column(db.String(250), nullable=True)
-    image = db.Column(db.String(250), nullable=True)
-
-
-# Create database
-with app.app_context():
-    db.create_all()
+# Not currently in use
+# class Projects(db.Model):
+#     __tablename__ = "portfolio_projects"
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(250), unique=True, nullable=False)
+#     summary = db.Column(db.String(250), nullable=False)
+#     description = db.Column(db.Text, nullable=False)
+#     github_link = db.Column(db.String(250), nullable=True)
+#     thumbnail = db.Column(db.String(250), nullable=True)
+#     image = db.Column(db.String(250), nullable=True)
+#
+#
+# # Create database
+# with app.app_context():
+#     db.create_all()
 
 
 @app.route('/')
@@ -60,6 +61,16 @@ def dragonbot():
 @app.route('/snowagerbot')
 def snowagerbot():
     return render_template("snowagerbot.html")
+
+
+@app.route('/travelblog')
+def travelblog():
+    return render_template("travelblog.html")
+
+
+@app.route('/morsetranslator')
+def morsetranslator():
+    return render_template("morsetranslator.html")
 
 
 @app.route('/contact', methods=["GET", "POST"])
