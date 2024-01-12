@@ -1,0 +1,38 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="px-3 mb-auto mt-5">
+<div class="container">
+  <div class="typewriter">
+    <h1>Image Watermarker</h1>
+<br><br>
+<p><i>
+The Image Watermarker can apply a single transparent watermark to an unlimited number of images.
+</i>
+<br><br>
+<img src="../static/assets/img/image_watermark_program.png">
+<br><br>
+The Image Watermarker was written independently as a project for this portfolio. It can take an entire folder of images and apply a transparent watermark across them.
+<br><br>
+The watermark is expected to be square and transparent. It is then dynamically resized to the width of each submitted image. Because the watermark is a square, it does not skew when resized.
+<br><br>
+In just a few seconds, an entire folder of watermarked images is created. The user may change folders or watermarks at any time. The GUI is clean and clear, it is built in Tkinter.
+<br><br>
+The Image Watermarker is often improving and changing. You can view the code in its entirety here:
+<br>
+<a href="https://github.com/hatosaurus/imagewatermarker/" target="_blank">Image Watermarker on Github</a>
+</p>
+
+  </div>
+</div>
+  </main>
+{% include "footer.html" %}

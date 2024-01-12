@@ -73,6 +73,11 @@ def morsetranslator():
     return render_template("morsetranslator.html")
 
 
+@app.route('/watermarker')
+def watermarker():
+    return render_template("watermarker.html")
+
+
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
