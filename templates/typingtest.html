@@ -1,0 +1,40 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="px-3 mb-auto mt-5">
+<div class="container">
+  <div class="typewriter">
+    <h1>Typing Speed Check</h1>
+<br><br>
+<p><i>
+The typing speed check features a full interface in tkinter, and tests your words per minute.
+</i>
+<br><br>
+<img class="img-fluid" src="../static/assets/img/TypingSpeed.png">
+<br><br>
+The typing speed check is built in Python with the libray tkinter for the GUI. It draws from a library of 3,000 words to challenge the user.
+<br><br>
+Upon start, the user is presented with a set of 10 words (adjustable) and they are tasked with typing them as quickly and accurately as possible.
+<br><br>
+The GUI notes the start as the beginning of the test, and listens for the user to hit the 'Enter' key, which designates that they are done. At this time, it stops the timer.
+<br><br>
+In order to ensure smooth operation and scalable code, this project is written using OOP methods. The GUI, speed checker, and main program are all operated independently, but work together.
+<br><br>
+The Typing Speed Check was built as a project for this portfolio. You can view the code in its entirety here:
+<br>
+<a href="https://github.com/thejessimica/typingspeedcheck" target="_blank">Typing Speed Check on Github</a>
+</p>
+
+  </div>
+</div>
+  </main>
+{% include "footer.html" %}
