@@ -1,4 +1,10 @@
 {% include "header.html" %}
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+ <script>
+   function onSubmit(token) {
+     document.getElementById("contactForm").submit();
+   }
+ </script>
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
@@ -16,6 +22,7 @@
     <h3>Thank you for reaching out!</h3>
     {% else: %}
     <h3>Contact Me</h3>
+    <p>hello@jessicaschmidt.ca</p>
     <p class="lead">
     <form
             id="contactForm"
@@ -68,13 +75,8 @@
               <label for="message">Message</label>
             </div>
             <br />
-            <button
-              class="btn btn-light fw-bold border-white bg-white"
-              id="submitButton"
-              type="submit"
-            >
-              Send
-            </button>
+<!--    <button type="submit" class="btn btn-light fw-bold border-white bg-white" id="submitButton">Send</button>-->
+    <button type="submit" class="g-recaptcha btn btn-light fw-bold border-white bg-white" data-sitekey="{{ site_key }}" data-callback='onSubmit' data-action='submit'>Send</button>
           </form>
     </p>
     {% endif %}

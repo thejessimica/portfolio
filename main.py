@@ -1,14 +1,21 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from flask_bootstrap import Bootstrap5
 import os
 import smtplib
 from email.message import EmailMessage
 from flask_sqlalchemy import SQLAlchemy
+import requests
 
 
 # Init Flask App
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['FLASK_KEY']
+
+
+recaptcha_site_key = os.environ['RECAPTCHA_SITE_KEY']
+recaptcha_secret_key = os.environ['RECAPTCHA_SECRET_KEY']
+verify_url = "https://www.google.com/recaptcha/api/siteverify"
+
 
 # Init Boostrap
 Bootstrap5(app)
@@ -86,15 +93,16 @@ def typingtest():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        data = request.form
-        print(request.form['name'])
-        print(request.form['email'])
-        print(request.form['phone'])
-        print(request.form['message'])
-        send_email(data["name"], data["email"], data["phone"], data["message"])
-        return render_template("contact.html", form_submitted=True)
+        secret_response = request.form['g-recaptcha-response']
+        verify_response = requests.post(url=f"{verify_url}?secret={recaptcha_secret_key}&response={secret_response}").json()
+        if not verify_response['success']:
+            abort(401)
+        else:
+            data = request.form
+            send_email(data["name"], data["email"], data["phone"], data["message"])
+            return render_template("contact.html", form_submitted=True)
     else:
-        return render_template("contact.html", form_submitted=False)
+        return render_template("contact.html", form_submitted=False, site_key=recaptcha_site_key)
 
 
 def send_email(name, email, phone, message):
