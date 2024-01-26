@@ -1,0 +1,48 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="px-3 mb-auto mt-5">
+<div class="container">
+  <div class="typewriter">
+    <h1>Breakout</h1>
+<br><br>
+<p><i>
+A re-creation of the 80's game Breakout, written in Python using primarily the Turtle library.
+</i>
+<br><br>
+<!--<div class="embed-responsive embed-responsive-4by3">-->
+<!--    <video class="embed-responsive-item" width="500" controls muted autoplay src="" type="video/mp4">-->
+<!--    </video>-->
+<!--</div>-->
+<div class="embed-responsive embed-responsive-1by1">
+  <iframe class="embed-responsive-item" height="220" src="{{url_for('static', filename='Breakout.mp4')}}" frameborder="0"></iframe>
+</div>
+
+<br><br>
+For this project, a strong basis of OOP was used to form the different game objects and their various methods.
+<br><br>
+When the game starts, it generates a set amount of blocks and fills a list with their coordinates. This list is stored for later use.
+<br><br>
+The player's paddle at the bottom of the screen is controlled with either A and D or the arrow keys. Both the paddle and ball are separate classes.
+<br><br>
+While the game is running, it will loop through a check to see if the ball is close to any coordinates in the list of blocks.
+    If it is, the block is moved to -1000, 1000, and a sound plays. The Pygame module is used to play the sound effects without stopping the code or using threads.
+<br><br>
+Breakout was built as a project for this portfolio. You can view the code in its entirety here:
+<br>
+<a href="https://github.com/thejessimica/breakout" target="_blank">Breakout on Github</a>
+</p>
+
+  </div>
+</div>
+  </main>
+{% include "footer.html" %}
