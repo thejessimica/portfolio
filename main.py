@@ -95,6 +95,11 @@ def breakout():
     return render_template("breakout.html")
 
 
+@app.route('/coffeeapi')
+def coffeeapi():
+    return render_template("coffeeapi.html")
+
+
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
