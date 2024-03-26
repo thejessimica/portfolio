@@ -100,6 +100,11 @@ def coffeeapi():
     return render_template("coffeeapi.html")
 
 
+@app.route('/wheelanddeal')
+def wheelanddeal():
+    return render_template("wheelanddeal.html")
+
+
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
