@@ -5,7 +5,8 @@
       <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('portfolio') }}">Web Development</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('design') }}">Design</a>
         <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
       </nav>
     </div>
@@ -17,9 +18,10 @@
   </div>
 </div>
 
-    <p class="lead">Welcome to my portfolio site! My name is Jessica, and I am a full-stack developer. I am currently looking for full-time work. <br>Check out my portfolio with the link below!</p>
+    <p class="lead">Welcome to my portfolio! My name is Jessica. <br>I am a web developer, graphic designer, and all-around creative.</p>
     <p class="lead">
-      <a href="{{ url_for('portfolio') }}" class="btn btn-lg btn-light fw-bold border-white bg-white">View Portfolio</a>
+      <p><a href="{{ url_for('portfolio') }}" class="btn btn-lg btn-light fw-bold border-white bg-white">Web Development Portfolio</a></p>
+      <p><a href="{{ url_for('portfolio') }}" class="btn btn-lg btn-light fw-bold border-white bg-white">Graphic Design Portfolio</a></p>
     </p>
   </main>
 

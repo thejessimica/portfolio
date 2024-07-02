@@ -59,6 +59,10 @@ def home():
 def portfolio():
     return render_template("portfolio.html")
 
+@app.route('/design')
+def design():
+    return render_template("design.html")
+
 
 @app.route('/dragonbot')
 def dragonbot():

@@ -1,0 +1,40 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('portfolio') }}">Web Development</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{{ url_for('design') }}">Design</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-5 mb-auto">
+<div class="row g-4 mt-1">
+<!--    break-->
+<h2>Alpha Dog Archery</h2>
+  <p>The Alpha Dog Archery design project was used for merchandising a line of products and for the company's social media presence.</p>
+  <p>
+    <img src="../static/assets/img/Alpha_Dog_Archery.jpg" alt="Alpha Dog Archery Logo" style="max-width: 400px; max-height: 400px;">
+  </p>
+  <p>
+    <img src="../static/assets/img/alpha_dog_hat.jpg" alt="Alpha Dog Archery Hat" style="max-width: 250px; max-height: 250px;">
+    <img src="../static/assets/img/alpha_dog_shirt.jpg" alt="Alpha Dog Archery Shirt" style="max-width: 250px; max-height: 250x;">
+  </p>
+<!--    break-->
+<h2>Magazine Illustration and Layout</h2>
+<p>
+  These draft illustrations and the resulting final piece were published and shipped worldwide from Australia.
+</p>
+<p>
+    <img src="../static/assets/img/Kestrel_WIP_Page.jpg" alt="Illustration Drafts" style="max-width: 250px">
+    <img src="../static/assets/img/The_Loss_Of_Peril.jpg" alt="Illustration Final" style="max-width: 250px">
+</p>
+<!--    break-->
+</div>
+  </main>
+
+{% include "footer.html" %}
