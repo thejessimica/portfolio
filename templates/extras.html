@@ -1,0 +1,87 @@
+{% include "header.html" %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Jessica Schmidt</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('portfolio') }}">Web Development</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('design') }}">Design</a>
+        <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-5 mb-auto">
+<div class="row g-4 mt-1">
+<!--    break-->
+<h2>Animated Puppet</h2>
+<p>This animated puppet uses live face tracking in real time to produce a lively, vibrant character. When not detecting motion from the camera, the puppet plays ambient animations to simulate breathing and idle motion.</p>
+    <p><a href="../static/assets/img/01_dragon_sketch.png" target="_blank">
+        <img src="../static/assets/img/01_dragon_sketch.png" alt="Dragon Puppet Sketch" class="img-fluid">
+    </a>
+    </p>
+    <p>This puppet project began as a simple sketch and the drive to learn about interactive motion design. The primary software used was Adobe Photoshop, Adobe Illustrator, and Live2D.</p>
+
+    <p><a href="../static/assets/img/02_dragon_pieces.png" target="_blank">
+        <img src="../static/assets/img/02_dragon_pieces.png" alt="Dragon Puppet Pieces" class="img-fluid">
+    </a>
+    </p>
+    <p>The puppet is composed of many pieces, each illustrated independently and mirrored as necessary.</p>
+    <p><a href="../static/assets/img/03_dragon_pieces.png" target="_blank">
+        <img src="../static/assets/img/03_dragon_pieces.png" alt="Dragon Puppet Pieces" class="img-fluid">
+    </a>
+    </p>
+    <p><a href="../static/assets/img/04_dragon_mesh_chestx.png" target="_blank">
+        <img src="../static/assets/img/04_dragon_mesh_chestx.png" alt="Dragon Puppet Mesh" class="img-fluid">
+    </a>
+    </p>
+    <p>The mesh of the puppet, pictured above, has variations of complexity based on whether the piece needs to deform with a head turn.</p>
+    <p>
+        <a href="../static/assets/img/modelshowcase2.jpg" target="_blank">
+        <img src="../static/assets/img/modelshowcase2.jpg" alt="Dragon Puppet Showcase" class="img-fluid" style="max-width: 250px">
+    </a>
+        <a href="../static/assets/img/modelshowcase1.jpg" target="_blank">
+        <img src="../static/assets/img/modelshowcase1.jpg" alt="Dragon Puppet Showcase" class="img-fluid" style="max-width: 250px">
+    </a>
+    </p>
+        <p><a href="../static/assets/img/modelshowcase0.jpg" target="_blank">
+        <img src="../static/assets/img/modelshowcase0.jpg" alt="Dragon Puppet Final" class="img-fluid">
+    </a>
+    </p>
+      <p>The final model. Play the video below to see it in action!</p>
+    <h3>Video Demo</h3>
+    <div class="embed-responsive embed-responsive-1by1">
+  <iframe class="embed-responsive-item" height="255" src="{{url_for('static', filename='facetrack_demo.mp4')}}" frameborder="0"></iframe>
+</div>
+
+<h1>In-House Promo Illustration</h1>
+    <p><a href="../static/assets/img/godzilla_and_kong.png" target="_blank">
+        <img src="../static/assets/img/godzilla_and_kong.png" alt="Godzilla and Kong at the Movies" class="img-fluid">
+    </a>
+    </p>
+    <p>In 2022, this illustration was requested to promote guest engagement for a small, location-specific promotion during the release of Godzilla vs Kong.</p>
+
+<h1>Salmon Illustration</h1>
+    <p><a href="../static/assets/img/fish_canvas.png" target="_blank">
+        <img src="../static/assets/img/fish_canvas.png" alt="Salmon Illustration" class="img-fluid">
+    </a>
+    </p>
+    <p>Personal work, celebrating the beauty of patterns and repetition as they appear in nature, such as in a school of fish.</p>
+
+<h1>Lens Photography</h1>
+    <p><a href="../static/assets/img/LENS.jpg" target="_blank">
+        <img src="../static/assets/img/LENS.jpg" alt="Lens Photo" class="img-fluid">
+    </a>
+    </p>
+    <p>The final piece of my bonus portfolio - my love letter to the theatres. I was one of the last of the film projectionists,
+        and I had the privilege of taking many of the projector parts home with me when the last film projectors were disassembled.
+    I chose a Christie 50mm scope lens as my subject. Years of use had filled this lens with dust and blemishes, but in my eyes,
+    the beauty of it is unmatched. I still keep all the old projector pieces - my heart beats in the magic of film.</p>
+
+    <h2>Thank you for reviewing my work!</h2>
+<!--    break-->
+</div>
+  </main>
+
+{% include "footer.html" %}

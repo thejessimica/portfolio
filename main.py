@@ -65,6 +65,11 @@ def design():
     return render_template("design.html")
 
 
+@app.route('/extras')
+def extras():
+    return render_template("extras.html")
+
+
 @app.route('/dragonbot')
 def dragonbot():
     return render_template("dragonbot.html")
